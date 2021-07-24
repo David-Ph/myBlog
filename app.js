@@ -15,6 +15,7 @@ app.use(fileUpload());
 // ? import routes
 // //////////
 const postRouter = require("./routes/posts");
+const commentRouter = require("./routes/comments");
 
 // ?import error handler
 // /////////////////////
@@ -23,6 +24,7 @@ const errorHandler = require("./middlewares/errorHandler/errorHandler");
 // ? set routes
 // ///////////////
 app.use("/posts", postRouter);
+app.use("/posts", commentRouter);
 
 app.all("*", async (req, rex, next) => {
   try {

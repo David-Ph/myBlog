@@ -16,7 +16,7 @@ class PostController {
 
   async getPostById(req, res, next) {
     try {
-      const data = await Post.findById(req.params.id);
+      const data = await Post.findById(req.params.id).populate("comments");
       if (!data) {
         return next({ message: "Post not found", statusCode: 404 });
       }
