@@ -11,6 +11,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
+app.set("view engine", "ejs");
 
 // ? import routes
 // //////////
@@ -23,6 +24,9 @@ const errorHandler = require("./middlewares/errorHandler/errorHandler");
 
 // ? set routes
 // ///////////////
+app.get("/", function (req, res) {
+  res.render("frontpage");
+});
 app.use("/posts", postRouter);
 app.use("/posts", commentRouter);
 
