@@ -1,0 +1,44 @@
+#page-logo {
+  border-radius: 10px;
+  padding-bottom: 1em;
+}
+
+.round-border {
+  border-radius: 10px;
+}
+
+#hero-content-container {
+  max-width: 600px;
+}
+/* background color for header hero #48c78e */
+main {
+  min-height: 500px;
+}
+.main-content {
+  padding: 3em 1.5em;
+}
+.blog-article {
+  padding-bottom: 1em;
+  border-bottom: 2px solid rgb(223 216 216);
+  margin-bottom: 1em;
+}
+/* .blog-title {
+  color: #48c78e;
+} */
+.blog-thumbnail {
+  border-radius: 10px;
+}
+.blog-info {
+  margin-top: 0.5em;
+  color: rgb(146, 137, 137);
+}
+.created-at {
+  border-right: 1px solid rgb(146, 137, 137);
+  padding-right: 1em;
+  margin-right: 1em;
+}
+
+.page-footer {
+  background-color: #47c78e;
+  font-weight: bold;
+}

@@ -25,7 +25,7 @@ const errorHandler = require("./middlewares/errorHandler/errorHandler");
 // ? set routes
 // ///////////////
 app.get("/", function (req, res) {
-  res.render("frontpage");
+  res.redirect("/posts");
 });
 app.use("/posts", postRouter);
 app.use("/posts", commentRouter);

@@ -8,7 +8,8 @@ class PostController {
         return next({ message: "Posts not found", statusCode: 404 });
       }
 
-      res.status(200).json({ data });
+      res.render("index");
+      // res.status(200).json({ data });
     } catch (error) {
       next(error);
     }
