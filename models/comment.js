@@ -20,6 +20,13 @@ const commentSchema = new mongoose.Schema(
   {
     timestamps: {
       createdAt: "createdAt",
+      updatedAt: "updatedAt",
+    },
+    toJSON: {
+      versionKey: false,
+      transform: function (doc, ret) {
+        delete ret.id;
+      },
     },
   }
 );
