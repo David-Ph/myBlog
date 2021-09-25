@@ -29,9 +29,9 @@ class PostController {
   async createPost(req, res, next) {
     try {
       const newPost = await Post.create(req.body);
-      const data = await Post.findOne({ _id: newPost.id });
 
-      res.status(201).json({ data });
+      res.redirect("/");
+      // res.status(201).json({ data });
     } catch (error) {
       next(error);
     }
@@ -71,12 +71,7 @@ class PostController {
 class PostRenderer {
   async renderCreate(req, res, next) {
     try {
-      const data = await Post.find().populate("comments");
-      if (data.length === 0) {
-        return next({ message: "Posts not found", statusCode: 404 });
-      }
-
-      res.render("createPost", { posts: data });
+      res.render("createPost");
     } catch (error) {
       next(error);
     }
