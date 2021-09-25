@@ -22,7 +22,7 @@ class PostController {
         return next({ message: "Post not found", statusCode: 404 });
       }
 
-      res.status(200).json({ data });
+      res.render("post", { post: data });
     } catch (error) {}
   }
 
@@ -31,7 +31,6 @@ class PostController {
       const newPost = await Post.create(req.body);
 
       res.redirect("/");
-      // res.status(201).json({ data });
     } catch (error) {
       next(error);
     }

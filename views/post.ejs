@@ -1,0 +1,23 @@
+<%- include('partials/headers') %>
+<main class="main-content">
+  <% if(post){ %>
+  <div class="columns">
+    <div class="column post-container">
+      <img
+        class="post-image round-border"
+        src="<%= post.thumbnails %> "
+        alt=""
+      />
+      <h1 class="post-title title is-1 has-text-success"><%= post.title %></h1>
+      <p class="post-info">
+        <span class="created-at"
+          ><%= post.createdAt.toLocaleDateString('en-gb') %>
+        </span>
+        <span class="comments-count">0 comments</span>
+      </p>
+      <p class="blog-content"><%= post.content %></p>
+    </div>
+  </div>
+  <% } %>
+</main>
+<%- include('partials/footers') %>
