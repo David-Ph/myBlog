@@ -68,4 +68,21 @@ class PostController {
   }
 }
 
-module.exports = new PostController();
+class PostRenderer {
+  async renderCreate(req, res, next) {
+    try {
+      const data = await Post.find().populate("comments");
+      if (data.length === 0) {
+        return next({ message: "Posts not found", statusCode: 404 });
+      }
+
+      res.render("createPost", { posts: data });
+    } catch (error) {
+      next(error);
+    }
+  }
+}
+module.exports = {
+  PostController: new PostController(),
+  PostRenderer: new PostRenderer(),
+};

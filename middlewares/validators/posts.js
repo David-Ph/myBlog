@@ -2,7 +2,7 @@ const { Post } = require("../../models");
 const validator = require;
 
 class PostValidator {
-  createPostValidator(req, res, next) {
+  async createPostValidator(req, res, next) {
     try {
       const errorMessages = [];
 
@@ -24,7 +24,7 @@ class PostValidator {
     }
   }
 
-  updatePostValidator(req, res, next) {
+  async updatePostValidator(req, res, next) {
     try {
       const findPost = Post.findOne({ _id: req.params.id });
 

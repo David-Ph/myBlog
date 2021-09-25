@@ -1,0 +1,30 @@
+<%- include('partials/headers') %>
+<main class="main-content">
+  <div class="container page-container">
+    <h1>CREATING NEW POST</h1>
+    <% if(posts){ %> <% posts.forEach((post) =>{ %>
+    <article class="blog-article">
+      <div class="columns">
+        <div class="column is-one-third">
+          <img class="blog-thumbnail" src="<%= post.thumbnails %> " alt="" />
+        </div>
+        <div class="column">
+          <h1 class="blog-title title is-3">
+            <a class="has-text-success" href=""><%= post.title %> </a>
+          </h1>
+          <p class="blog-description">
+            <%= post.content.substring(0, 300) %>....
+          </p>
+          <p class="blog-info">
+            <span class="created-at"
+              ><%= post.createdAt.toLocaleDateString('en-gb') %>
+            </span>
+            <span class="comments-count">0 comments</span>
+          </p>
+        </div>
+      </div>
+    </article>
+    <% }) %> <% } %>
+  </div>
+</main>
+<%- include('partials/footers') %>
