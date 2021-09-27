@@ -26,6 +26,17 @@ class PostController {
     } catch (error) {}
   }
 
+  async getPostData(req, res, next) {
+    try {
+      const data = await Post.findById(req.params.id);
+      if (!data) {
+        return next({ message: "Post not found", statusCode: 404 });
+      }
+
+      res.status(200).json({ data });
+    } catch (error) {}
+  }
+
   async createPost(req, res, next) {
     try {
       const newPost = await Post.create(req.body);
@@ -54,6 +65,7 @@ class PostController {
 
   async deletePost(req, res, next) {
     try {
+      console.log("DELETING");
       const postToDelete = await Post.findByIdAndDelete(req.params.id);
 
       if (!postToDelete) {

@@ -14,10 +14,15 @@
           ><%= post.createdAt.toLocaleDateString('en-gb') %>
         </span>
         <span class="comments-count">0 comments</span>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
       </p>
-      <p class="blog-content"><%= post.content %></p>
+      <div id="editor-container" class="blog-content"></div>
     </div>
   </div>
   <% } %>
 </main>
+<div style="clear: both"></div>
+
+<script src="/js/post.js"></script>
 <%- include('partials/footers') %>

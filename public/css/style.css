@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 #page-logo {
   border-radius: 10px;
   padding-bottom: 1em;
@@ -41,6 +47,13 @@ main {
 .page-footer {
   background-color: #47c78e;
   font-weight: bold;
+  clear: both;
+}
+
+/* CREATE POST */
+#editor-container {
+  height: 100%;
+  max-height: 100vh;
 }
 
 /* GET ONE POST */
@@ -56,6 +69,22 @@ main {
 .post-info {
   color: rgba(0, 0, 0, 0.5);
   margin-bottom: 1.5rem;
+}
+.edit-btn,
+.delete-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-size: 0.85rem;
+}
+.edit-btn {
+  color: rgba(65, 105, 225, 0.384);
+}
+.delete-btn {
+  color: rgba(255, 0, 0, 0.459);
 }
 @media screen and (max-width: 700px) {
   .post-title {

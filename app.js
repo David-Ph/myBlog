@@ -28,7 +28,6 @@ app.get("/", function (req, res) {
   res.redirect("/posts");
 });
 app.use("/posts", postRouter);
-app.use("/posts", commentRouter);
 
 app.all("*", async (req, rex, next) => {
   try {
