@@ -8,8 +8,11 @@ class PostController {
         return next({ message: "Posts not found", statusCode: 404 });
       }
 
+      data.forEach((post) => {
+        post.content = post.content.replace(/[^a-zA-Z ]/g, "");
+      });
+
       res.render("index", { posts: data });
-      // res.status(200).json({ data });
     } catch (error) {
       next(error);
     }
