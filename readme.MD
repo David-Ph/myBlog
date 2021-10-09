@@ -1,4 +1,4 @@
-# Good Omens Coffee
+# myBlog
 
 A blog app to share your mind.
 A simple side project I created to try out EJS and QuillJS
